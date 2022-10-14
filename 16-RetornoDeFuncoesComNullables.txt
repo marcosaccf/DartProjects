@@ -1,0 +1,50 @@
+void main() {
+  String nome = funcao();
+  print(nome);
+
+  nome = funcao1();
+  print(nome);
+
+  nome = funcao2();
+  print(nome);
+
+  String? nome1 = funcao3(12);
+  print(nome1);
+
+  nome1 = funcao3(8);
+  print(nome1);
+
+  String? nome2 = funcao4(12);
+  if (nome2 != null) {
+    print(nome2.toUpperCase());
+  }
+  
+  String nome3 = funcao5(8) ?? 'Não informado';
+  print(nome3.toUpperCase());
+}
+
+String funcao() {
+  return 'Marcos';
+}
+
+String funcao1() => 'Marcos';
+
+String funcao2() => 'Marcos'.toUpperCase();
+
+String? funcao3(int x) {
+  if (x > 10) {
+    return 'Olá mundo!';
+  }
+}
+
+String? funcao4(int x) {
+  if (x > 10) {
+    return 'Olá mundo!';
+  }
+}
+
+String? funcao5(int x) {
+  if (x > 10) {
+    return 'Olá mundo!';
+  }
+}

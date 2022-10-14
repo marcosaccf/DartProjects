@@ -1,0 +1,38 @@
+void main() {
+  Pessoa pessoa1 = Pessoa(nome: 'Daniel', idade: 40);
+  print(pessoa1.nome);
+  print(pessoa1.idade);
+  
+  Pessoa pessoa2 = pessoa1;
+  print(pessoa2.nome);
+  print(pessoa2.idade);
+  
+  pessoa1.nome = 'Henrique';
+  print(pessoa2.nome);
+  print(pessoa2.idade);
+  
+  funcao(pessoa1);
+  
+  print(pessoa1.idade);
+  print(pessoa2.idade);
+  
+  int numero = 10;
+  funcao1(numero);
+  print(numero);
+}
+
+void funcao1(int x) {
+  x = 20;
+}
+
+void funcao(Pessoa pessoa) {
+  pessoa.idade++;
+}
+  
+class Pessoa {
+  
+  Pessoa({required this.nome, required this.idade});
+ 
+  String nome;
+  int idade;
+}

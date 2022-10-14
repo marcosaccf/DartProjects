@@ -1,0 +1,51 @@
+void main() {
+  Pessoa pessoa1 = Pessoa.solteira(nome: 'Daniel', idade: 40);
+  pessoa1.trocarNome('Henrique');
+  print(pessoa1.nome);
+  print(pessoa1.idade);
+
+  print(pessoa1.aniversario());
+
+  pessoa1.casar();
+  print(pessoa1.casado);
+
+  Pessoa pessoa2 = Pessoa.casada(nome: 'Ciolfi', idade: 30);
+  print(pessoa2.nome);
+  print(pessoa2.idade);
+  print(pessoa2.casado);
+
+  print(pessoa2.aniversario());
+}
+
+class Pessoa {
+  
+  Pessoa({required this.nome, required this.idade, this.casado = false}) {
+    print('Criando o $nome com idade $idade');
+  }
+  
+  Pessoa.casada({required this.nome, required this.idade, this.casado = true}) {
+    print('Criando o $nome, casado, com idade $idade');
+  }
+  
+  Pessoa.solteira({required this.nome, required this.idade, this.casado = false}) {
+    print('Criando o $nome, solteiro, com idade $idade');
+  }
+  
+  String nome;
+  int idade;
+  bool casado;
+
+  int? aniversario() {
+    print('Parabéns, $nome!');
+    idade++;
+    return idade;
+  }
+
+  void casar() {
+    casado = true;
+  }
+
+  void trocarNome(String n) {
+    nome = n;
+  }
+}

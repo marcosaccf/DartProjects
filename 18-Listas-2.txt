@@ -1,0 +1,29 @@
+void main() {
+  List<String> nomes = [
+    'Daniel',
+    'Ciolfi',
+    'Henrique',
+    'Giovanna',
+    'Marcos',
+    'Eliane',
+    'Mariane'
+  ];
+
+  print(nomes);
+  
+  for(int i = 0; i < nomes.length; i++) {
+    print(nomes[i].toUpperCase());
+  }
+  
+  print('');
+  
+  for(String nome in nomes.sublist(2, 4)) {
+    print(nome.toUpperCase());
+  }
+  
+  print('');
+  
+  nomes.sublist(2).forEach((nome) {
+    print(nome.toUpperCase());
+  });
+}

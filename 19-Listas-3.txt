@@ -1,0 +1,25 @@
+void main() {
+  List<int> maluca = List.filled(100, 8);
+  List<int> doida = List.generate(10, funcao);
+  List<int> pirada = List.generate(10, (i) => i * 10);
+  
+  print(maluca);
+  print(doida);
+  print(pirada);
+  print(doida.isEmpty);
+  print(doida.isNotEmpty);
+  
+  doida.remove(0);
+  
+  bool temValor = (doida.any((i) => i % 33 == 0));
+  print(temValor);
+  
+  print(doida.firstWhere((i) => i % 30 == 0));
+  print(doida.lastWhere((i) => i % 30 == 0));
+  print(doida.where((i) => i % 30 == 0));
+  print(doida.map((i) => i + 1));
+}
+
+int funcao(int pos) {
+  return pos * 15;
+}

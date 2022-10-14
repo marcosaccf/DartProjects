@@ -1,0 +1,30 @@
+void main() {
+  double nota = 6.3;
+  double exame = 5;
+  String mensagem = nota >= 5 || (nota >= 3.5 && exame >= 7) ? 'Aprovado' : 
+  'Reprovado';
+  
+  print(mensagem);
+  
+  /*if(nota >= 5.0) {
+    print('Aprovado');
+  } else if(nota >= 3.5) {
+    if(exame >= 7) {
+      print('Aprovado no exame');
+    } else {
+    print('Reprovado no Exame');
+    }
+  } else {
+    print('Reprovado');
+  }*/
+  
+  /*if(nota >= 5.0) {
+    print('Aprovado');
+  } else if(nota >= 3.5 && exame >= 7.0) {
+    print('Aprovado no Exame');
+  } else if(nota >= 3.5) {
+    print('Reprovado no Exame');
+  } else {
+    print('Reprovado');
+  }*/
+}

@@ -1,0 +1,36 @@
+void main() {
+  Map<int, String?> ddds = {
+    11: 'São Paulo',
+    19: 'Campinas',
+    41: 'Curitiba',
+    81: null,
+    50: 'São Paulo'
+  };
+  
+  ddds[61] = 'Brasilia';
+  String? cidade = ddds[81];
+  print(cidade);
+  cidade = ddds[19];
+  print(cidade);
+  print(ddds);
+  print(ddds.length);
+  ddds[81] = 'Recife';
+  print(ddds);
+  ddds.remove(41);
+  print(ddds.isEmpty);
+  print(ddds.containsKey(11));
+  print(ddds.containsValue('Campinas'));
+  print(ddds);
+  print(ddds.keys);
+  print(ddds.values);
+  ddds.addAll({79: 'Aracaju', 86: 'Teresina'});
+  
+  ddds.forEach((key, value) {
+    print('Chave $key Valor $value');
+  });
+  
+  ddds.removeWhere((key, value) => key > 20);
+  print(ddds);
+  ddds.clear();
+  print(ddds);
+}

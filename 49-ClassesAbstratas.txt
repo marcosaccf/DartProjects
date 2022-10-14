@@ -1,0 +1,93 @@
+void main() {
+  Cachorro cachorro1 = Cachorro('Rex', 3);
+  cachorro1.comer();
+  cachorro1.dormir();
+  cachorro1.latir();
+  cachorro1.morrer();
+
+  print(cachorro1);
+
+  Gato gato1 = Gato('Fluflu', 9);
+  gato1.comer();
+  gato1.dormir();
+  gato1.miar();
+  gato1.morrer();
+
+  print(gato1);
+
+  try {
+    Cachorro animal1 = funcao() as Cachorro;
+    animal1.latir();
+  } catch (e) {
+    print('Erro! Não é um Cachorro.');
+  }
+}
+
+Animal funcao() {
+  return Gato('Cat', 10); // Tem que ser Cachorro ou subtipo de Cachorro para usar o operador Cast:as
+}
+
+abstract class Animal {
+  Animal(this.nome, this.idade);
+
+  String nome;
+  int idade;
+
+  void comer() {
+    print('Comeu');
+  }
+
+  void dormir() {
+    print('Dormiu');
+  }
+  
+  void morrer();
+}
+
+class Cachorro extends Animal {
+  Cachorro(String nome, int idade) : super(nome, idade) {
+    print('Criou o cachorro $nome');
+  }
+
+  void latir() {
+    print('Latiu');
+  }
+
+  @override
+  void dormir() {
+    super.dormir();
+    print('Dormiu roncando muito!!!');
+  }
+
+  @override
+  String toString() {
+    return 'Cachorro - Nome: $nome Idade $idade';
+  }
+
+  @override
+  void morrer() {
+    print('O cachorro $nome morreu. Muito triste :(');
+  }
+}
+
+class Gato extends Animal {
+  Gato(String nome, int idade) : super(nome, idade) {
+    print('Criou o gato $nome');
+  }
+  int vidas = 7;
+
+  void miar() {
+    print('Miou');
+  }
+
+  @override
+  String toString() {
+    return 'Gato - Nome: $nome Idade $idade';
+  }
+
+  @override
+  void morrer() {
+    vidas--;
+    print('O gato $nome perdeu uma vida. Sobraram $vidas vidas.');
+  }
+}

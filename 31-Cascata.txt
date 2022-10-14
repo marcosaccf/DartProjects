@@ -1,0 +1,27 @@
+void main() {
+  List<String> nomes = [];
+
+  List<String> mod = nomes
+    ..add('Daniel')
+    ..add('Ciolfi')
+    ..remove('Daniel');
+
+  print(nomes);
+  print(mod);
+
+  nomes
+    ..add('Daniel')
+    ..add('Ciolfi')
+    ..remove('Daniel');
+
+  print(nomes);
+  print(mod);
+  print(funcao(nomes));
+}
+
+List<String> funcao(List<String> lista) {
+  return lista
+    ..add('Daniel')
+    ..add('Ciolfi')
+    ..remove('Ciolfi');
+}

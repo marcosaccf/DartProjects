@@ -1,0 +1,20 @@
+void main() {
+  const String nome = 'Daniel';
+  const int idade = 50 + 30;
+  const List<String> lista = ['Daniel', 'Ciolfi'];
+  const nome1 = 'Daniel';
+  const idade1 = 50 + 30;
+  const lista1 = ['Daniel', 'Ciolfi'];
+  
+  final DateTime agora = DateTime.now();
+  //agora = DateTime.now();
+  
+  final String sobrenome;
+  if(nome == 'Daniel') {
+    sobrenome = 'Ciolfi';
+  } else {
+    sobrenome = 'Não sei';
+  }
+  print(nome + ' ' + sobrenome);
+  print(agora);
+}

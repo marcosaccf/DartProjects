@@ -1,0 +1,11 @@
+void main() {
+  try {
+    int resultado = 100 ~/ 0;
+    print(resultado);
+  } on UnsupportedError {
+    print('Caiu aqui!');
+  } catch (e) {
+    print(e.runtimeType);
+  }
+  print('Final');
+}

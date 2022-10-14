@@ -1,0 +1,24 @@
+void main() {
+  saudacoes('Daniel');
+  saudacoes('Daniel', cliente: 'Marcos');
+}
+
+void saudacoes(
+  String nome, {
+  bool mostrarAgora = true,
+  String? cliente,
+}) {
+  String c = cliente ?? 'Não informado';
+  print('Saudações do ${nome.toUpperCase()}.');
+
+  print('Seja bem-vindo(a), ${c.toUpperCase()}!');
+
+  if (mostrarAgora) {
+    print('Agora: ${agora()}');
+  }
+}
+
+String agora() {
+  DateTime agora = DateTime.now();
+  return agora.toString();
+}
